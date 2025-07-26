@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+
+  <!-- ✅ Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* ✅ Custom styles to center nav links */
+    .navbar-nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .navbar-brand img {
+      height: 30px;
+      margin-right: 8px;
+    }
+
+    /* Optional: Center the login form */
+    .login-container {
+      max-width: 400px;
+      margin: 60px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✅ NAVBAR (same style as index.html) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+      <!-- 🔹 Logo + Title on Left -->
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img src="https://cdn-icons-png.flaticon.com/512/1001/1001371.png" alt="Logo">
+        Complaint Tracking System
+      </a>
+
+      <!-- 🔹 Centered nav items -->
+      <div class="collapse navbar-collapse justify-content-center">
+        <ul class="navbar-nav navbar-nav-center mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#status">Check Status</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/#contact">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- 🔹 Admin Dashboard Right (optional here) -->
+      <div class="d-flex">
+        <a href="/admin" class="btn btn-outline-light">Admin Dashboard</a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ✅ Admin Login Form -->
+  <div class="login-container">
+    <h3 class="text-center mb-4">Admin Login</h3>
+    <form method="POST" action="/admin_login">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" name="username" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" class="form-control" required>
+      </div>
+
+      <button type="submit" class="btn btn-dark w-100">Login</button>
+    </form>
+  </div>
+
+  <!-- ✅ Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

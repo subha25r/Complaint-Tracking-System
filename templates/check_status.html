@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Check Complaint Status</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- 🔹 Navbar (optional) -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"> Complaint Tracking System</a>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2>Check Complaint Status</h2>
+    <form method="POST">
+      <div class="mb-3">
+        <label for="tracking_id" class="form-label">Tracking ID</label>
+        <input type="text" name="tracking_id" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-dark">Check Status</button>
+    </form>
+
+    {% if status_info %}
+    <div class="mt-4 alert alert-info">
+      <h5>Status: {{ status_info[5] }}</h5>
+      <p><strong>Name:</strong> {{ status_info[1] }}</p>
+      <p><strong>Email:</strong> {{ status_info[2] }}</p>
+      <p><strong>Complaint:</strong> {{ status_info[3] }}</p>
+      <p><strong>Category:</strong> {{ status_info[4] }}</p>
+      <p><strong>Submitted:</strong> {{ status_info[6] }}</p>
+    </div>
+    {% elif request.method == 'POST' %}
+    <div class="mt-4 alert alert-danger">Tracking ID not found.</div>
+    {% endif %}
+  </div>
+
+</body>
+
+</html>
